@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="Robot_vi_sai" xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="laser_visual" default="false"/>
+  <xacro:arg name="camera_visual" default="false"/>
+  <xacro:arg name="imu_visual"   default="false"/>
+    <gazebo reference="base_link">
+        <material>Gazebo/DarkGrey</material>
+    </gazebo>
+
+    <gazebo reference="wheel_right">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+    <gazebo reference="wheel_left">
+        <mu1>0.1</mu1>
+        <mu2>0.1</mu2>
+        <kp>500000.0</kp>
+        <kd>10.0</kd>
+        <minDepth>0.001</minDepth>
+        <maxVel>0.1</maxVel>
+        <fdir1>1 0 0</fdir1>
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+            <ros>
+                <namespace>/</namespace>
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+            <alwaysOn>true</alwaysOn>
+            <updateRate>50.0</updateRate>
+            <leftJoint>wheel_left_to_base_link</leftJoint>
+            <rightJoint>wheel_right_to_base_link</rightJoint>
+            <wheelSeparation>0.25</wheelSeparation>
+            <wheelDiameter>0.15</wheelDiameter>
+            <torque>5.0</torque>
+            <commandTopic>cmd_vel</commandTopic>
+            <odometryTopic>odom</odometryTopic>
+            <odometryFrame>odom</odometryFrame>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <publishWheelTF>false</publishWheelTF>
+            <publishTf>true</publishTf>
+        </plugin>
+    </gazebo>
+</robot>
