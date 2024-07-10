@@ -33,4 +33,5 @@ Nếu hiện: Hi username! You've successfully authenticated, but GitHub does no
       git commit -m "first commit"
       git branch -M main
       git remote add origin git@github.com:phamduyaaaa/RobotVisai.git
+      git add .
       git push origin main
