@@ -25,7 +25,7 @@ Nhấp vào "Add SSH key" để thêm khóa.
       ssh -T git@github.com
 Nếu hiện: Hi username! You've successfully authenticated, but GitHub does not provide shell access.
 --> Success!
-### B4: Nếu folder đã được git init, thì chạy git push, nếu không:
+### B4: Nếu folder đã được git init thì chạy git push, nếu không:
      
       echo "# RobotVisai" >> README.md
       git init
