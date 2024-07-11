@@ -1,4 +1,8 @@
-Code này chỉ để thử đẩy 1 folder lên github ^__^
+## Code này chỉ để thử đẩy 1 folder lên github nhưng vẫn có thể dùng để mô phỏng động học nghịch.
+#### Thử nghiệm trên turtlesim:      
+    roslaunch mobilerobot turtle.launch
+#### Thử nghiệm trên gazebo:
+    roslaunch mobilerobot model_robot.launch
 
 ### B1: Kết nối với SSH trên Ubuntu:
      
