@@ -2,6 +2,8 @@
     roslaunch mobilerobot turtle.launch
 #### Thử nghiệm trên gazebo:
     roslaunch mobilerobot model_robot.launch
+#### Hoạch định quỹ đạo:
+    rosrun mobilerobot control_2_tur.py
 ## Các bước để đẩy 1 folder lên Github:
 ### B1: Kết nối với SSH trên Ubuntu:
       ssh-keygen -t rsa -b 4096 -C "thichchoivelkoz@gmail.com"
